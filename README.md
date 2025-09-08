@@ -7,7 +7,7 @@
 - **Code Converter & Optimiser**
 - **ChatBot**
 
-<img width="1308" height="1024" alt="image" src="https://github.com/user-attachments/assets/30166b4f-f546-49c9-88d1-b9053431fa3c" />
+<img width="546" height="457" alt="Screenshot 2025-09-08 at 11 04 19 PM" src="https://github.com/user-attachments/assets/ca0203e1-cb8a-4aa8-a618-c8de5ab74b3b" />
 
 
 ## 📖 Overview
@@ -35,6 +35,7 @@ cd frontend
 npm install
 npm start
 ```
+
 
 
 
