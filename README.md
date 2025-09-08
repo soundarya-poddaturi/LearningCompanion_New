@@ -1,5 +1,15 @@
 # Learning Companion
 
+## Key Features
+- **PDF Reader**
+- **YouTube Transcriptor**
+- **Path Planner**
+- **Code Converter & Optimiser**
+- **ChatBot**
+
+<img width="1308" height="1024" alt="image" src="https://github.com/user-attachments/assets/30166b4f-f546-49c9-88d1-b9053431fa3c" />
+
+
 ## 📖 Overview
 This project consists of a **Flask backend** and a **React frontend**.  
 Follow the steps below to set up and run both parts.
@@ -25,5 +35,6 @@ cd frontend
 npm install
 npm start
 ```
+
 
 
