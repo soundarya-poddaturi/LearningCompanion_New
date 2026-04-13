@@ -1,10 +1,16 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
-FLASH_API_KEY = "GOOGLE_API_KEY"  # Google Flash 1.5 API
-YOUTUBE = "YOUTUBE_API_KEY"  # YouTube API Key
-TAVILY = "TAVILY_API_KEY"  # Tavily API Key
+FLASH_API_KEY = os.getenv("GOOGLE_API_KEY")
+YOUTUBE = os.getenv("YOUTUBE_API_KEY")
+TAVILY = os.getenv("TAVILY_API_KEY")
+
+if not FLASH_API_KEY or not YOUTUBE or not TAVILY:
+    raise ValueError("Missing one or more API keys: GOOGLE_API_KEY, YOUTUBE_API_KEY, TAVILY_API_KEY")
 
 FLASH_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"

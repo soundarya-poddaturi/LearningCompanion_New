@@ -1,8 +1,12 @@
 import requests
 import json
 import fitz  # PyMuPDF for PDF text extraction
+import os
+from dotenv import load_dotenv
 #  pip install pymupdf
 # pip install google-api-python-client
+
+load_dotenv()
 
 def extract_text_from_pdf(pdf_path):
     """Extracts text from a given PDF file."""
@@ -76,7 +80,9 @@ def generate_content(api_key, pdf_text, prompt_type, user_question=None):
 
 
 # Example Usage:
-api_key = "GOOGLE_API_KEY"  # Replace with your actual API key
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    raise ValueError("Missing GOOGLE_API_KEY in environment variables")
 pdf_path = "/Users/soundaryapoddaturi/Desktop/projects/college/sems/4-1/CC/CC-Unit1-Notes.pdf"  # Path to your PDF file
 
 # Let the user select between Q&A and Quiz

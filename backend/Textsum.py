@@ -18,11 +18,15 @@ import google.generativeai as genai
 import re 
 import ai21
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class all_in_one():
         #def getsentence(data):#Give data in the string format 
-        API_KEY = 'GOOGLE_API_KEY'
+        API_KEY = os.getenv("GOOGLE_API_KEY")
         API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
         """  def getsentence(data,lines):#Give data in the string format and no of requried lines 
                 #lines=100
@@ -98,7 +102,9 @@ class all_in_one():
                 finaldata=" ".join(l)
                 return finaldata
         def askai(data):#basically u can ask anything , data should be given in sting format
-                apikey="GOOGLE_API_KEY"
+                apikey=os.getenv("GOOGLE_API_KEY")
+                if not apikey:
+                    raise ValueError("Missing GOOGLE_API_KEY in environment variables")
                 palm.configure(api_key=apikey)
                 modelid='models/text-bison-001'
                 toBeAsked=data#to be given in string 
@@ -119,14 +125,16 @@ class all_in_one():
 
                 return completion.result
         def askai21(content , doubt ):
-             ai21.api_key = 'ai21_api_key'
+             ai21.api_key = os.getenv("AI21_API_KEY")
              a=ai21.Answer.execute(context=content, question=doubt)
              data={}
              data["answer"]=a.answer
              data["valid"]=a.answerInContext
              return data
         def askgem(question):
-                apikey="gem_api_key"
+                apikey=os.getenv("GOOGLE_API_KEY")
+                if not apikey:
+                    raise ValueError("Missing GOOGLE_API_KEY in environment variables")
                 genai.configure(api_key=apikey)
                 model = genai.GenerativeModel('gemini-pro')
                 generation_config = {

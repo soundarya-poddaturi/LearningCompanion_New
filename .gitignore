@@ -1,5 +1,8 @@
 # Ignore environment variables
 flask/.env
+.env
+.env.*
+!.env.example
 
 # Ignore Python-related files
 flask/__pycache__/
@@ -9,6 +12,9 @@ flask/.pytest_cache/
 flask/instance/
 flask/venv/
 venv_sound/
+**/__pycache__/
+*.pyc
+*.pyo
 
 
 
